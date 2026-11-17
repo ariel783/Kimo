@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚕 Taxi Rush</title>
+    <link rel="stylesheet" href="Uber.css">
+</head>
+
+<body>
+<button onclick="unpo()"><img src="flecha izquierda.PNG" width="60"></button>
+    <div id="inicio" class="pantalla">
+        <h1>🚕 TAXI RUSH</h1>
+        <p>¡Lleva al cliente hasta su destino!</p>
+
+        <div class="taxi-grande">🚕</div>
+
+        <button id="comenzar">▶️ Comenzar viaje</button>
+    </div>
+
+
+    <!-- ANIMACIÓN DEL CLIENTE SUBIENDO -->
+
+    <div id="subida" class="pantalla oculto">
+
+        <h1>👤 ¡El cliente está subiendo!</h1>
+
+        <div class="escena">
+
+            <div class="taxi-animado">🚕</div>
+
+            <div id="clienteSubiendo" class="cliente">
+                🧑
+            </div>
+
+        </div>
+
+        <p id="mensajeSubida">El cliente se está acercando...</p>
+
+    </div>
+
+
+    <!-- JUEGO -->
+
+    <div id="juego" class="oculto">
+
+        <div class="barra">
+
+            <span>🚕 Taxi Rush</span>
+
+            <span>
+                ⭐ Puntos:
+                <strong id="puntos">0</strong>
+            </span>
+
+            <span>
+                ❤️ Vidas:
+                <strong id="vidas">3</strong>
+            </span>
+
+        </div>
+
+
+        <div id="carretera">
+
+            <div class="linea linea1"></div>
+            <div class="linea linea2"></div>
+
+            <div id="taxiJugador">
+                🚕
+            </div>
+
+            <div class="obstaculo carro1">🚗</div>
+            <div class="obstaculo carro2">🚙</div>
+            <div class="obstaculo carro3">🚘</div>
+
+        </div>
+
+
+        <div class="controles">
+            <button id="izquierda">⬅️</button>
+            <button id="derecha">➡️</button>
+        </div>
+
+        <p>Usa ⬅️ ➡️ o las flechas del teclado para moverte.</p>
+
+    </div>
+
+
+    <!-- FINAL -->
+
+    <div id="final" class="pantalla oculto">
+
+        <h1>🏁 ¡Llegaste!</h1>
+
+        <div class="escena-final">
+
+            <div id="taxiFinal">🚕</div>
+
+            <div id="clienteFinal">
+                🧑
+            </div>
+
+            <div id="dinero">
+                💵
+            </div>
+
+        </div>
+
+        <h2 id="mensajeFinal">
+            El cliente está bajando...
+        </h2>
+
+        <p id="recompensa"></p>
+
+        <button onclick="location.reload()">
+            🔄 Seguir trabajando
+        </button>
+
+    </div>
+
+
+    <script src="Uber.js"></script>
+
+</body>
+</html>

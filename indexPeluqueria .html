@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💇‍♀️ Mi Peluquería</title>
+    <link rel="stylesheet" href="Peluqueria.css">
+</head>
+
+<body>
+<button onclick="unbo()"><img src="flecha izquierda.PNG" width="60"></button>
+<header>
+    <h1>💇‍♀️✨ MI PELUQUERÍA ✨💇‍♂️</h1>
+    <p>¡Atiende a tus clientes y gana dinero!</p>
+</header>
+
+<main>
+
+    <!-- CLIENTE -->
+    <section class="salon">
+
+        <div class="cliente-panel">
+
+            <h2>👤 Cliente</h2>
+
+            <div id="cliente" class="cliente">
+                <div id="cabello" class="cabello"></div>
+                <div class="cara">🙂</div>
+            </div>
+
+            <h3 id="nombreCliente">Sofía</h3>
+
+            <div class="pedido">
+                <p>🗣️ El cliente pide:</p>
+                <strong id="pedidoTexto">Cola de caballo</strong>
+            </div>
+
+        </div>
+
+
+        <!-- HERRAMIENTAS -->
+
+        <div class="herramientas">
+
+            <h2>🧰 Herramientas</h2>
+
+            <div class="herramientas-grid">
+
+                <button class="herramienta" data-tool="peine">
+                    <span>🪮</span>
+                    <b>Peine</b>
+                </button>
+
+                <button class="herramienta" data-tool="ligas">
+                    <span>🎀</span>
+                    <b>Ligas</b>
+                </button>
+
+                <button class="herramienta" data-tool="regadera">
+                    <span>🚿</span>
+                    <b>Regadera</b>
+                </button>
+
+                <button class="herramienta" data-tool="secadora">
+                    <span>💨</span>
+                    <b>Secadora</b>
+                </button>
+
+                <button class="herramienta" data-tool="tijeras">
+                    <span>✂️</span>
+                    <b>Tijeras</b>
+                </button>
+
+            </div>
+
+
+            <div class="progreso">
+
+                <h3>📋 Trabajo</h3>
+
+                <div id="pasos"></div>
+
+            </div>
+
+            <button id="terminarBtn">
+                💵 Terminar trabajo
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- DINERO -->
+
+    <section id="resultado" class="resultado oculto">
+
+        <div class="cliente-final">
+            <div id="clienteFinal">🙂</div>
+        </div>
+
+        <h2 id="mensajeResultado">
+            ¡Trabajo terminado!
+        </h2>
+
+        <div class="dinero">
+            💵 <span id="dineroGanado">$0</span>
+        </div>
+
+        <p>¡El cliente está feliz! 😄</p>
+
+        <button id="reiniciarBtn">
+            🔄 Seguir trabajando
+        </button>
+
+    </section>
+
+</main>
+
+<footer>
+    ⭐ ¡Haz un buen trabajo para ganar más dinero! ⭐
+</footer>
+
+<script src="Peluqueria.js"></script>
+
+</body>
+</html>

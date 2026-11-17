@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍕 Pizza Maker</title>
+    <link rel="stylesheet" href="Pizza.final.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🍕 ¡Pizza Maker! 🍕</h1>
+        <p>Arrastra los ingredientes hasta la pizza</p>
+    </header>
+
+    <main>
+<button onclick="Bup()"><img src="flecha izquierda.PNG" width="60"></button>
+        <section class="juego">
+
+            <!-- INGREDIENTES -->
+            <div class="panel-ingredientes">
+
+                <h2>🧺 Ingredientes</h2>
+
+                <div class="ingredientes">
+
+                    <div class="ingrediente" draggable="true" data-name="Pepperoni">
+                        <img id="img-pepperoni" alt="Pepperoni">
+                        <span>Pepperoni</span>
+                    </div>
+
+                    <div class="ingrediente" draggable="true" data-name="Queso">
+                        <img id="img-queso" alt="Queso">
+                        <span>Queso</span>
+                    </div>
+
+                    <div class="ingrediente" draggable="true" data-name="Champiñones">
+                        <img id="img-champinones" alt="Champiñones">
+                        <span>Champiñones</span>
+                    </div>
+
+                    <div class="ingrediente" draggable="true" data-name="Tomate">
+                        <img id="img-tomate" alt="Tomate">
+                        <span>Tomate</span>
+                    </div>
+
+                    <div class="ingrediente" draggable="true" data-name="Aceitunas">
+                        <img id="img-aceitunas" alt="Aceitunas">
+                        <span>Aceitunas</span>
+                    </div>
+
+                    <div class="ingrediente" draggable="true" data-name="Pimiento">
+                        <img id="img-pimiento" alt="Pimiento">
+                        <span>Pimiento</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PIZZA -->
+            <div class="zona-pizza">
+
+                <h2>👨‍🍳 Prepara la pizza</h2>
+
+                <div id="pizza" class="pizza">
+
+                    <div class="base-pizza">
+                        <div class="salsa"></div>
+            
+                    </div>
+
+                </div>
+
+                <p id="mensaje">
+                    Arrastra los ingredientes sobre la pizza 🍕
+                </p>
+
+                <button id="servirBtn">
+                    🍕 ¡Servir pizza!
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLIENTE -->
+        <section id="cliente" class="cliente oculto">
+
+            <div class="cliente-personaje">
+
+                <div class="cabeza">
+                    <div class="cabello"></div>
+
+                    <div class="ojo ojo1"></div>
+                    <div class="ojo ojo2"></div>
+
+                    <div class="boca"></div>
+                </div>
+
+                <div class="cuerpo">
+                    👕
+                </div>
+
+            </div>
+
+            <div class="mesa">
+
+                <div id="pizza-final" class="pizza-final">
+                    🍕
+                </div>
+
+                <div class="plato"></div>
+
+            </div>
+
+            <div class="texto-cliente">
+                <h2>😋 ¡Qué rica pizza!</h2>
+                <p id="estadoCliente">El cliente está esperando...</p>
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+    <button id="reiniciarBtn">🔄 Seguir trabajando</button>
+
+    <footer>
+        ⭐ Pizza Maker ⭐
+    </footer>
+
+    <script src="Jaba 3 pizza.js"></script>
+
+</body>
+</html>

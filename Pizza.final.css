@@ -1,0 +1,436 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe0a6, #fff4d6);
+    min-height: 100vh;
+    color: #542b12;
+}
+
+header {
+    text-align: center;
+    padding: 25px;
+    background: #ff7043;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 20px;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+}
+
+.juego {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+/* -------------------------
+   INGREDIENTES
+------------------------- */
+
+.panel-ingredientes {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    width: 360px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.panel-ingredientes h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ingredientes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.ingrediente {
+    background: #fff5e6;
+    border: 3px solid #ffb74d;
+    border-radius: 18px;
+    padding: 10px;
+    text-align: center;
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ingrediente:hover {
+    transform: scale(1.06);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+.ingrediente:active {
+    cursor: grabbing;
+}
+
+.ingrediente img {
+    width: 90px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+.ingrediente span {
+    display: block;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+/* -------------------------
+   ZONA DE PIZZA
+------------------------- */
+
+.zona-pizza {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    min-width: 600px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.zona-pizza h2 {
+    margin-bottom: 15px;
+}
+
+.pizza {
+    width: 470px;
+    height: 470px;
+    margin: auto;
+    position: relative;
+    border-radius: 50%;
+}
+
+
+/* BASE */
+
+.base-pizza {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e9a43b;
+    border-radius: 50%;
+    border: 22px solid #d78321;
+    box-shadow:
+        inset 0 0 0 8px #f8c65d,
+        0 10px 20px rgba(0,0,0,0.25);
+}
+
+.salsa {
+    position: absolute;
+    width: 88%;
+    height: 88%;
+    top: 6%;
+    left: 6%;
+    border-radius: 50%;
+    background: #d94232;
+    border: 10px solid #b72c22;
+}
+
+
+/* INGREDIENTES COLOCADOS */
+
+.ingrediente-puesto {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    z-index: 5;
+    animation: aparecer 0.4s ease;
+    pointer-events: none;
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.pizza.arrastrando {
+    transform: scale(1.03);
+}
+
+#mensaje {
+    margin: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#servirBtn {
+    border: none;
+    background: #43a047;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#servirBtn:hover {
+    transform: scale(1.08);
+}
+
+#servirBtn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+
+/* -------------------------
+   CLIENTE
+------------------------- */
+
+.cliente {
+    margin-top: 40px;
+    background: #b3e5fc;
+    min-height: 430px;
+    border-radius: 30px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.oculto {
+    display: none;
+}
+
+.cliente-personaje {
+    position: absolute;
+    left: 20%;
+    bottom: 40px;
+    animation: entrarCliente 1.5s ease forwards;
+}
+
+@keyframes entrarCliente {
+    from {
+        left: -250px;
+    }
+
+    to {
+        left: 20%;
+    }
+}
+
+
+/* CABEZA */
+
+.cabeza {
+    width: 150px;
+    height: 150px;
+    background: #ffc37a;
+    border-radius: 50%;
+    position: relative;
+    border: 5px solid #d88942;
+}
+
+.cabello {
+    width: 155px;
+    height: 70px;
+    background: #542d18;
+    border-radius: 80px 80px 20px 20px;
+    position: absolute;
+    top: -15px;
+    left: -7px;
+}
+
+.ojo {
+    width: 13px;
+    height: 18px;
+    background: #222;
+    border-radius: 50%;
+    position: absolute;
+    top: 65px;
+}
+
+.ojo1 {
+    left: 42px;
+}
+
+.ojo2 {
+    right: 42px;
+}
+
+.boca {
+    width: 45px;
+    height: 20px;
+    background: #d94b4b;
+    border-radius: 0 0 30px 30px;
+    position: absolute;
+    bottom: 32px;
+    left: 50px;
+}
+
+.cuerpo {
+    font-size: 110px;
+    margin-top: -5px;
+}
+
+
+/* MESA */
+
+.mesa {
+    position: absolute;
+    right: 15%;
+    bottom: 45px;
+    width: 300px;
+    height: 130px;
+}
+
+.plato {
+    position: absolute;
+    width: 260px;
+    height: 70px;
+    background: white;
+    border: 8px solid #bbb;
+    border-radius: 50%;
+    bottom: 0;
+    left: 20px;
+}
+
+
+/* PIZZA FINAL */
+
+.pizza-final {
+    font-size: 100px;
+    position: absolute;
+    z-index: 3;
+    left: 85px;
+    bottom: 35px;
+    transition: all 1s ease;
+}
+
+
+/* ANIMACION DE COMER */
+
+.cliente.comiendo .pizza-final {
+    animation: comerPizza 3s ease forwards;
+}
+
+@keyframes comerPizza {
+
+    0% {
+        left: 85px;
+        bottom: 35px;
+        transform: rotate(0deg) scale(1);
+    }
+
+    35% {
+        left: -80px;
+        bottom: 140px;
+        transform: rotate(-20deg) scale(0.9);
+    }
+
+    60% {
+        left: -110px;
+        bottom: 170px;
+        transform: rotate(-35deg) scale(0.7);
+    }
+
+    100% {
+        left: -100px;
+        bottom: 170px;
+        transform: rotate(-40deg) scale(0);
+    }
+}
+
+.texto-cliente {
+    position: absolute;
+    right: 10%;
+    top: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.texto-cliente h2 {
+    margin-bottom: 8px;
+}
+
+
+/* -------------------------
+   FOOTER
+------------------------- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+
+/* -------------------------
+   CELULAR
+------------------------- */
+
+@media (max-width: 900px) {
+
+    .juego {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .zona-pizza {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .pizza {
+        width: 350px;
+        height: 350px;
+    }
+
+    .cliente-personaje {
+        left: 5%;
+    }
+
+    .mesa {
+        right: 3%;
+    }
+#reiniciarBtn {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#reiniciarBtn:hover {
+    transform: scale(1.05);
+}
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Estación de Pizza</title>
+
+    <!-- Icono -->
+    <link rel="icon" href="Icon de pizza.jpg">
+
+    <!-- Archivo CSS externo -->
+    <link rel="stylesheet" href="Pizza.final.css">
+
+    <style>
+
+        /* Caja de diálogo */
+        .dialogo-pizza{
+            position:absolute;
+            top:120px;
+            left:500px;
+
+            background:#fff3cd;
+            color:#5a3e1b;
+            padding:15px 25px;
+            border-radius:20px;
+            border:2px solid #ff9800;
+            font-size:22px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Pico del diálogo */
+        .dialogo-pizza::after{
+            content:"";
+            position:absolute;
+            bottom:-15px;
+            left:40px;
+            border-width:15px 15px 0;
+            border-style:solid;
+            border-color:#fff3cd transparent transparent transparent;
+        }
+
+        /* Botón */
+.boton-iniciar{
+position:absolute;
+top:220px;
+left:500px;
+
+            padding:12px 25px;
+            font-size:18px;
+            border:none;
+            border-radius:12px;
+            background:#ff9800;
+            color:white;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .boton-iniciar:hover{
+            background:#e68900;
+            transform:scale(1.05);
+        }
+    </style>
+</head>
+
+<body onload="CAl()">
+<button onclick="you()"><img src="flecha izquierda.PNG" width="60"></button>
+<label id="DP" class="dialogo-pizza">
+🍕 Hola buen día quiero una
+<br> Pizza de:
+<br>
+<label id="random_Ingre"></label>
+    </label>
+
+<button id="BI" onclick="Bin()" class=".boton-iniciar">
+        Iniciar
+    </button>
+<img src="man-talking (1).gif" height="600" style="position:absolute;left: 700px;top: 100px;px">
+<script  src="Jaba 3 pizza.js"></script>
+</body>
+</html>
